@@ -1,6 +1,6 @@
 ---
 applications:
-- disk_quota: 2048M
-  name: db6667
+- disk_quota: 1024M
+  name: v2docker
   random-route: true
   memory: 128M
