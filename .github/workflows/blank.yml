@@ -1,7 +1,5 @@
-name: ibm-reboot
-on:
-  schedule:
-    - cron: 10 22 * * *
+name: ibmbushu
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest  
@@ -21,13 +19,13 @@ jobs:
     - name: go kaishi
       run: |
         cd /home/runner/IBM_Cloud_CLI
-        #IBM账户密码在
         echo 7 | /home/runner/IBM_Cloud_CLI/ibmcloud login -u ${{ secrets.ibmuser }} -p ${{ secrets.ibmpasswd }}
         /home/runner/IBM_Cloud_CLI/ibmcloud target --cf
         /home/runner/IBM_Cloud_CLI/ibmcloud cf install
-        /home/runner/IBM_Cloud_CLI/ibmcloud cf restart HelloDocker 
+        wget https://github.com/byxiaopeng/ibmcfv2/raw/master/manifest.yml
+        /home/runner/IBM_Cloud_CLI/ibmcloud cf push --docker-image byxiaopeng/ibm-docker:latest
     - name: WeChat notification
-      run: curl https://sc.ftqq.com/SCU3787Te82950be8737ede8ba744210bdefaea35826a78d5c33a.send?text=重启IBMdocker成功       
+      run: curl https://sc.ftqq.com/SCU3787Te82950be8737ede8ba744210bdefaea35826a78d5c33a.send?text=IBMV2部署成功       
     - uses: actions/upload-artifact@master
       with:
         name: result
