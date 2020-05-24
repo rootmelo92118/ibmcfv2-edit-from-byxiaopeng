@@ -1,6 +1,6 @@
 ---
 applications:
 - disk_quota: 1024M
-  name: v2docker
+  name: HelloDocker
   random-route: true
   memory: 128M
