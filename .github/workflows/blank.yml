@@ -23,7 +23,7 @@ jobs:
         /home/runner/IBM_Cloud_CLI/ibmcloud target --cf
         /home/runner/IBM_Cloud_CLI/ibmcloud cf install
         wget https://github.com/byxiaopeng/ibmcfv2/raw/master/manifest.yml
-        /home/runner/IBM_Cloud_CLI/ibmcloud cf push HelloDocker --docker-image byxiaopeng/debian-ssh:latest
+        /home/runner/IBM_Cloud_CLI/ibmcloud cf push yanzi --docker-image byxiaopeng/ibm-docker:latest
     - name: WeChat notification
       run: curl https://sc.ftqq.com/SCU3787Te82950be8737ede8ba744210bdefaea35826a78d5c33a.send?text=IBMV2部署成功       
     - uses: actions/upload-artifact@master
