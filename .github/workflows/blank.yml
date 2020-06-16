@@ -8,7 +8,6 @@ jobs:
     - name: Install build dependencies
       run: |
         sudo apt-get -y update
-        sudo apt-get -y upgrade
         sudo apt-get -y install wget
         sudo apt-get -y install curl
     - name: Clone source
