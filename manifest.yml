@@ -1,6 +1,6 @@
 ---
 applications:
 - disk_quota: 2048M
-  name: HelloDocker
+  name: yanzi
   random-route: true
   memory: 128M
