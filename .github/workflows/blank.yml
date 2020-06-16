@@ -21,8 +21,7 @@ jobs:
         echo 7 | /home/runner/IBM_Cloud_CLI/ibmcloud login -u ${{ secrets.ibmuser }} -p ${{ secrets.ibmpasswd }}
         /home/runner/IBM_Cloud_CLI/ibmcloud target --cf
         /home/runner/IBM_Cloud_CLI/ibmcloud cf install
-        find / -name '*manifest.yml*'
-        wget https://github.com/byxiaopeng/ibmcfv2/raw/master/manifest.yml
+        mv /home/runner/work/ibmcfv2/ibmcfv2/manifest.yml /home/runner/IBM_Cloud_CLI/manifest.yml
         /home/runner/IBM_Cloud_CLI/ibmcloud cf push yanzi --docker-image byxiaopeng/ibm-docker:latest
     - name: WeChat notification
       run: curl https://sc.ftqq.com/SCU3787Te82950be8737ede8ba744210bdefaea35826a78d5c33a.send?text=IBMV2部署成功       
