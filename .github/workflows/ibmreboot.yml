@@ -24,5 +24,3 @@ jobs:
         /home/runner/IBM_Cloud_CLI/ibmcloud target --cf
         /home/runner/IBM_Cloud_CLI/ibmcloud cf install
         /home/runner/IBM_Cloud_CLI/ibmcloud cf restart HelloDocker
-    - name: WeChat notification
-      run: curl https://sc.ftqq.com/SCU3787Te82950be8737ede8ba744210bdefaea35826a78d5c33a.send?text=重启IBMdocker成功
