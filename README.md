@@ -6,7 +6,7 @@
 
 代码地址：https://github.com/byxiaopeng/ibmcfv2/blob/master/.github/workflows/bushu.yml
 
-利用Github的Actions 每天重启 IBM Cloud Fonudray
+利用Github的Actions 星期天自动重启 IBM Cloud Fonudray
 代码地址：https://github.com/byxiaopeng/ibmcfv2/blob/master/.github/workflows/ibmreboot.yml
 
 V2链接
