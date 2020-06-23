@@ -24,3 +24,4 @@ jobs:
         /home/runner/IBM_Cloud_CLI/ibmcloud target --cf
         /home/runner/IBM_Cloud_CLI/ibmcloud cf install
         /home/runner/IBM_Cloud_CLI/ibmcloud cf restart ssv2
+        /home/runner/IBM_Cloud_CLI/ibmcloud logout
