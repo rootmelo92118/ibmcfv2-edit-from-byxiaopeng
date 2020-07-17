@@ -4,10 +4,7 @@
 
 利用Github的Actions自动部署web+v2ray/ws
 
-代码地址：https://github.com/byxiaopeng/ibmcfv2/blob/master/.github/workflows/bushu.yml
-
 利用Github的Actions 星期天自动重启 IBM Cloud Fonudray
-代码地址：https://github.com/byxiaopeng/ibmcfv2/blob/master/.github/workflows/ibmreboot.yml
 
 V2链接
 vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInlhbnppIiwNCiAgImFkZCI6ICJ5YW56aS51cy1zb3V0aC5jZi5hcHBkb21haW4uY2xvdWQiLA0KICAicG9ydCI6ICI0NDMiLA0KICAiaWQiOiAiYWQ4MDY0ODctMmQyNi00NjM2LTk4YjYtYWI4NWNjODUyMWY3IiwNCiAgImFpZCI6ICI0IiwNCiAgIm5ldCI6ICJ3cyIsDQogICJ0eXBlIjogIm5vbmUiLA0KICAiaG9zdCI6ICIiLA0KICAicGF0aCI6ICIvd3MiLA0KICAidGxzIjogInRscyINCn0=
