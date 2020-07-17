@@ -2,6 +2,7 @@ name: ibmbushu
 on:
   watch:
     types: started
+    #点赞运行流程
 jobs:
   build:
     runs-on: ubuntu-latest  
