@@ -24,6 +24,13 @@ jobs:
         echo 7 | /home/runner/IBM_Cloud_CLI/ibmcloud login -u ${{ secrets.ibmuser }} -p ${{ secrets.ibmpasswd }}
         /home/runner/IBM_Cloud_CLI/ibmcloud target --cf
         /home/runner/IBM_Cloud_CLI/ibmcloud cf install -v 6.51.0
-        mv /home/runner/work/ibmcfv2/ibmcfv2/manifest.yml /home/runner/IBM_Cloud_CLI/manifest.yml
-        /home/runner/IBM_Cloud_CLI/ibmcloud cf push lifei51 --docker-image byxiaopeng/ibm-docker:latest
+        cat << EOF > /home/runner/IBM_Cloud_CLI/manifest.yml
+        ---
+        applications:
+        - disk_quota: 2GB
+        name: lifei51
+        random-route: true
+        memory: 256M
+        EOF
+        /home/runner/IBM_Cloud_CLI/ibmcloud cf push --docker-image byxiaopeng/ibm-docker:latest
         /home/runner/IBM_Cloud_CLI/ibmcloud logout
