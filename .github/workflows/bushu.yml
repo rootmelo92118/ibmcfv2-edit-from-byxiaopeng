@@ -25,5 +25,5 @@ jobs:
         /home/runner/IBM_Cloud_CLI/ibmcloud target --cf
         /home/runner/IBM_Cloud_CLI/ibmcloud cf install -v 6.51.0
         mv /home/runner/work/ibmcfv2/ibmcfv2/manifest.yml /home/runner/IBM_Cloud_CLI/manifest.yml
-        /home/runner/IBM_Cloud_CLI/ibmcloud cf push yanzi --docker-image byxiaopeng/ibm-docker:latest
+        /home/runner/IBM_Cloud_CLI/ibmcloud cf push lifei51 --docker-image byxiaopeng/ibm-docker:latest
         /home/runner/IBM_Cloud_CLI/ibmcloud logout
