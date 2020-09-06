@@ -17,7 +17,7 @@ jobs:
       run: |
         cd /home/runner
         wget https://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/1.2.0/binaries/IBM_Cloud_CLI_1.2.0_linux_amd64.tgz
-        tar zxvf IBM_Cloud_CLI_1.1.0_linux_amd64.tgz
+        tar zxvf IBM_Cloud_CLI_1.2.0_linux_amd64.tgz
     - name: go kaishi
       run: |
         cd /home/runner/IBM_Cloud_CLI
