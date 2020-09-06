@@ -1,6 +1,0 @@
----
-applications:
-- disk_quota: 2GB
-  name: yanzi
-  random-route: true
-  memory: 256M
