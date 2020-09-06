@@ -25,7 +25,7 @@ jobs:
       run: |
         cf api api.us-south.cf.cloud.ibm.com
         cf login -u ${{ secrets.ibmuser }} -p ${{ secrets.ibmpasswd }}
-     - name: Restart IBM Cloud
+    - name: Restart IBM Cloud
       run: |
         #查看运行的应用
         cf apps
