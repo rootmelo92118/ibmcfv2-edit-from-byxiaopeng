@@ -16,14 +16,14 @@ jobs:
     - name: Clone source
       run: |
         cd /home/runner
-        wget https://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/1.2.0/binaries/IBM_Cloud_CLI_1.2.0_linux_amd64.tgz
-        tar zxvf IBM_Cloud_CLI_1.2.0_linux_amd64.tgz
+        wget https://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/1.2.1/binaries/IBM_Cloud_CLI_1.2.1_linux_amd64.tgz
+        tar zxvf IBM_Cloud_CLI_1.2.1_linux_amd64.tgz
     - name: go kaishi
       run: |
         cd /home/runner/IBM_Cloud_CLI
         echo 7 | /home/runner/IBM_Cloud_CLI/ibmcloud login -u ${{ secrets.ibmuser }} -p ${{ secrets.ibmpasswd }}
         /home/runner/IBM_Cloud_CLI/ibmcloud target --cf
-        /home/runner/IBM_Cloud_CLI/ibmcloud cf install -v 6.51.0
+        /home/runner/IBM_Cloud_CLI/ibmcloud cf install -f
         cat << EOF > /home/runner/IBM_Cloud_CLI/manifest.yml
         ---
         applications:
