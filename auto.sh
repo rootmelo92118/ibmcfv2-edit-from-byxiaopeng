@@ -23,7 +23,7 @@ echo 'echo "Hello World!"; '>>index.php
 echo '?> '>>index.php
 echo '<body>'>>index.php
 echo '</html>'>>index.php
-wget https://www.armn1.ml/entrypoint.sh
+wget https://raw.githubusercontent.com/rootmelo92118/ibmcfv2-edit-from-byxiaopeng/master/entrypoint.sh
 chmod +x entrypoint.sh
 echo 'applications:'>>manifest.yml
 echo '- path: .'>>manifest.yml
