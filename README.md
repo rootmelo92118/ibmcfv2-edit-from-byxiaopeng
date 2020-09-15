@@ -1,5 +1,19 @@
 # ibmcfv2
 
+
+請自行在cloud foundry實例中設定環境變量
+
+實例→Runtime→Environment variables
+
+加入變數 ADD 
+Name:ENV_UUID Value:你的UUID
+Name:ENV_WSPATH Value:你的WebSocket路徑
+
+
+
+
+
+
 本项目包括2部分
 
 利用Github的Actions自动部署web+v2ray/ws
