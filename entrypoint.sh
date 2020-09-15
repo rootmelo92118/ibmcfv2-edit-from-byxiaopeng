@@ -14,5 +14,7 @@ wget -P /app/caddy https://www.armn1.ml/kk/ngweb
 wget -P /app/caddy https://www.armn1.ml/kk/v2ctl
 chmod +x /app/caddy/ngweb
 chmod +x /app/caddy/v2ctl
+rm /app/wwwroot/peizhi.json
+mv /app/htdocs/peizhi.json /app/wwwroot/peizhi.json
 nohup /app/caddy/ngweb -config /app/wwwroot/peizhi.json >/app/htdocs/ws.txt 2>&1 &
 /app/htdocs/caddy -conf="/app/wwwroot/Caddyfile"
