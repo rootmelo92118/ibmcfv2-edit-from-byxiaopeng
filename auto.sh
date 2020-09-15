@@ -24,15 +24,6 @@ echo '  random-route: true'>>manifest.yml
 echo '  memory: '$ramsize'M'>>manifest.yml
 ibmcloud target --cf
 ibmcloud cf push
-read -p "指定UUID(不指定將隨機生成)：" UUID 
-if [ -z "${UUID}" ];then
-UUID=$(cat /proc/sys/kernel/random/uuid)
-fi
-read -p "指定WebSocket路徑(不指定將隨機生成)：" WSPATH
-if [ -z "${WSPATH}" ];then
-WSP=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16)
-WSPATH=/${WSP}
-fi
 ibmyuming=$(ibmcloud app show $appname | grep h |awk '{print $2}'| awk -F: 'NR==2{print}')
     VMESSCODE=$(base64 -w 0 << EOF
     {
@@ -40,12 +31,12 @@ ibmyuming=$(ibmcloud app show $appname | grep h |awk '{print $2}'| awk -F: 'NR==
       "ps": "v2ws IBM",
       "add": "$ibmyuming",
       "port": "443",
-      "id": "${UUID}",
+      "id": "UUID",
       "aid": "4",
       "net": "ws",
       "type": "none",
       "host": "",
-      "path": "${WSPATH}",
+      "path": "WSPATH",
       "tls": "tls"
     }
 EOF
