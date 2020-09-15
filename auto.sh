@@ -3,15 +3,6 @@ read -p "请设置你的容器内存大小(默认256):" ramsize
 if [ -z "$ramsize" ];then
 	ramsize=256
 fi
-read -p "指定UUID(不指定將隨機生成)：" UUID 
-if [ -z "${UUID}" ];then
-UUID=$(cat /proc/sys/kernel/random/uuid)
-fi
-read -p "指定WebSocket路徑(不指定將隨機生成)：" WSPATH
-if [ -z "${WSPATH}" ];then
-WSP=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16)
-WSPATH=/${WSP}
-fi
 rm -rf phpcf
 mkdir phpcf
 cd phpcf
@@ -31,33 +22,17 @@ echo '  command: '/app/htdocs/entrypoint.sh'' >>manifest.yml
 echo '  name: '$appname''>>manifest.yml
 echo '  random-route: true'>>manifest.yml
 echo '  memory: '$ramsize'M'>>manifest.yml
-cat > peizhi.json << EOF
-{
-    "inbounds": [{
-        "port": 9090,
-        "listen": "127.0.0.1",
-        "protocol": "vmess",
-        "settings": {
-            "clients": [{
-                "id": "${UUID}",
-                "alterId": 4
-            }]
-        },
-        "streamSettings": {
-            "network": "ws",
-            "wsSettings": {
-                "path": "${WSPATH}"
-            }
-        }
-    }],
-    "outbounds": [{
-        "protocol": "freedom",
-        "settings": {}
-    }]
-}
-EOF
 ibmcloud target --cf
 ibmcloud cf push
+read -p "指定UUID(不指定將隨機生成)：" UUID 
+if [ -z "${UUID}" ];then
+UUID=$(cat /proc/sys/kernel/random/uuid)
+fi
+read -p "指定WebSocket路徑(不指定將隨機生成)：" WSPATH
+if [ -z "${WSPATH}" ];then
+WSP=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16)
+WSPATH=/${WSP}
+fi
 ibmyuming=$(ibmcloud app show $appname | grep h |awk '{print $2}'| awk -F: 'NR==2{print}')
     VMESSCODE=$(base64 -w 0 << EOF
     {
